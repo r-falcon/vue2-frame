@@ -25,11 +25,11 @@
               </li>
               <li class="list-group-item">
                 <svg-icon icon-class="tree" />所属部门
-                <div class="pull-right" v-if="user.dept">{{ user.dept.deptName }} / {{ postGroup }}</div>
+                <div class="pull-right">{{ user.dept}}</div>
               </li>
               <li class="list-group-item">
                 <svg-icon icon-class="peoples" />所属角色
-                <div class="pull-right">{{ roleGroup }}</div>
+                <div class="pull-right">{{ user.roleGroup }}</div>
               </li>
               <li class="list-group-item">
                 <svg-icon icon-class="date" />创建日期
@@ -59,33 +59,43 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 import userAvatar from "./userAvatar";
 import userInfo from "./userInfo";
 import resetPwd from "./resetPwd";
-import { getUserProfile } from "@/api/system/user";
+// import { getUserProfile } from "@/api/system/user";
 
 export default {
   name: "Profile",
-  components: { userAvatar, userInfo, resetPwd },
+  components: { 
+    userAvatar, 
+    userInfo, 
+    resetPwd 
+  },
   data() {
     return {
-      user: {},
-      roleGroup: {},
-      postGroup: {},
+      // user: {},
+      // roleGroup: {},
+      // postGroup: {},
       activeTab: "userinfo"
     };
   },
+  computed:{
+    ...mapGetters([
+      'user'
+    ])
+  },
   created() {
-    this.getUser();
+    // this.getUser();
   },
   methods: {
-    getUser() {
-      getUserProfile().then(response => {
-        this.user = response.data;
-        this.roleGroup = response.roleGroup;
-        this.postGroup = response.postGroup;
-      });
-    }
+    // getUser() {
+    //   getUserProfile().then(response => {
+    //     this.user = response.data;
+    //     this.roleGroup = response.roleGroup;
+    //     this.postGroup = response.postGroup;
+    //   });
+    // }
   }
 };
 </script>

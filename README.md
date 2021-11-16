@@ -32,3 +32,7 @@ npm run build:prod
 ## 后台
 
 黑马电商管理系统 node.js 后台
+
+## clone
+
+clone 项目修改后，并将项目移动到另一个目录，重新 install 出现 bug，删掉 node_modules，重新 install 得以解决

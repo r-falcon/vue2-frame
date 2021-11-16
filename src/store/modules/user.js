@@ -4,8 +4,9 @@ import { getToken, setToken, removeToken } from "@/utils/auth";
 const user = {
   state: {
     token: getToken(),
-    name: "",
-    avatar: "",
+    // name: "",
+    // avatar: "",
+    user: {},
     roles: [],
     permissions: [],
   },
@@ -14,11 +15,14 @@ const user = {
     SET_TOKEN: (state, token) => {
       state.token = token;
     },
-    SET_NAME: (state, name) => {
-      state.name = name;
-    },
-    SET_AVATAR: (state, avatar) => {
-      state.avatar = avatar;
+    // SET_NAME: (state, name) => {
+    //   state.name = name;
+    // },
+    // SET_AVATAR: (state, avatar) => {
+    //   state.avatar = avatar;
+    // },
+    SET_USER: (state, user) => {
+      state.user = user;
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles;
@@ -54,9 +58,11 @@ const user = {
         const res = {
           user: {
             userName: "falcon",
+            nickName: "xiaodai Rong",
             phonenumber: "15673239790",
             email: "falcon@126.com",
             dept: "产业互联网事业部/研发中心",
+            sex: "1", //0男 1女
             roleGroup: "Web开发",
             createTime: "2021-11-16 14:20:00",
             avatar: "",
@@ -66,7 +72,7 @@ const user = {
         };
 
         const user = res.user;
-        const avatar =
+        user.avatar =
           user.avatar === ""
             ? require("@/assets/images/profile.jpg")
             : process.env.VUE_APP_BASE_API + user.avatar;
@@ -76,8 +82,9 @@ const user = {
         } else {
           commit("SET_ROLES", ["ROLE_DEFAULT"]);
         }
-        commit("SET_NAME", user.userName);
-        commit("SET_AVATAR", avatar);
+        // commit("SET_NAME", user.userName);
+        // commit("SET_AVATAR", avatar);
+        commit("SET_USER", user);
         resolve(res);
 
         // getInfo()
