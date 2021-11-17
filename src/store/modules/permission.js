@@ -67,7 +67,7 @@ const permission = {
               component: "Layout",
               meta: {
                 title: "系统维护",
-                icon: "system",
+                icon: null,
               },
               children: [
                 {
@@ -75,6 +75,7 @@ const permission = {
                   path: "/system/user",
                   redirect: null,
                   component: "system/user/index",
+                  hidden: false,
                   meta: {
                     title: "用户管理",
                     icon: null,
@@ -85,6 +86,7 @@ const permission = {
                   path: "/system/role",
                   redirect: null,
                   component: "system/role/index",
+                  hidden: false,
                   meta: {
                     title: "角色管理",
                     icon: null,
@@ -95,8 +97,34 @@ const permission = {
                   path: "/system/menu",
                   redirect: null,
                   component: "system/menu/index",
+                  hidden: false,
                   meta: {
                     title: "菜单管理",
+                    icon: null,
+                  },
+                },
+              ],
+            },
+
+            // 用户操作
+            {
+              name: "Options",
+              path: "/options",
+              redirect: null,
+              component: "Layout",
+              meta: {
+                title: "用户操作",
+                icon: null,
+              },
+              children: [
+                {
+                  name: "Pagination",
+                  path: "/options/page",
+                  redirect: null,
+                  component: "options/table-pagination",
+                  hidden: false,
+                  meta: {
+                    title: "分页表格",
                     icon: null,
                   },
                 },
