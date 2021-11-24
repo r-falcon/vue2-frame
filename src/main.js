@@ -12,6 +12,7 @@ import store from "./store";
 import router from "./router";
 import directive from "./directive"; //directive
 import plugins from "./plugins"; // plugins
+import Print from "vue-print-nb";
 
 import "./assets/icons"; // icon
 import "./permission"; // permission control
@@ -60,6 +61,7 @@ Vue.component("Editor", Editor);
 Vue.component("FileUpload", FileUpload);
 Vue.component("ImageUpload", ImageUpload);
 
+Vue.use(Print);
 Vue.use(directive);
 Vue.use(plugins);
 Vue.use(VueMeta);
