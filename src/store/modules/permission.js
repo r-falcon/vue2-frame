@@ -128,6 +128,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Response",
+                  path: "/options/response",
+                  redirect: null,
+                  component: "options/response",
+                  hidden: false,
+                  meta: {
+                    title: "响应式原理",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
