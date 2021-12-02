@@ -139,6 +139,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "echarts",
+                  path: "/options/echarts",
+                  redirect: null,
+                  component: "options/echarts-demo",
+                  hidden: false,
+                  meta: {
+                    title: "统计图模块",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
