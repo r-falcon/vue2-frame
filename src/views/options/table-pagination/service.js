@@ -12,6 +12,7 @@ module.exports = {
       hobby: "旅游",
       enable: true,
       createTime: new Date().getTime(),
+      count: 0,
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ module.exports = {
       hobby: "旅游",
       enable: false,
       createTime: new Date().getTime(),
+      count: 0,
     },
     {
       id: 3,
@@ -36,6 +38,7 @@ module.exports = {
       hobby: "111",
       enable: true,
       createTime: new Date().getTime(),
+      count: 0,
     },
     {
       id: 4,
@@ -48,6 +51,7 @@ module.exports = {
       hobby: "112",
       enable: false,
       createTime: new Date().getTime(),
+      count: 0,
     },
     {
       id: 5,
@@ -60,6 +64,7 @@ module.exports = {
       hobby: "113",
       enable: true,
       createTime: new Date().getTime(),
+      count: 0,
     },
     {
       id: 6,
@@ -72,6 +77,7 @@ module.exports = {
       hobby: "",
       enable: false,
       createTime: new Date().getTime(),
+      count: 0,
     },
   ],
   treeData: [

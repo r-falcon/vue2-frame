@@ -219,12 +219,13 @@ export default {
                     <el-popconfirm
                       style={{ marginLeft: '10px' }}
                       title="确定要删除此项数据吗？"
-                      onConfirm={() => this.handleDelete(index,column,record)}
+                      onConfirm={() => this.handleDelete(index, column, record)}
                     >
                       <el-button slot="reference" type="text">删除</el-button>
                     </el-popconfirm>
                   ) : null
                 }
+                <el-button type="text" onClick={() => this.handleRemind(record)}>{`提醒(${record.count})`}</el-button>
               </span>
             );
           }
@@ -309,6 +310,25 @@ export default {
     }
   },
   methods: {
+    // 提醒函数
+    handleRemind (record) {
+      record.count++
+      this.$prompt('请输入提醒内容', '任务提醒', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^[\s\S]*.*[^\s][\s\S]*$/,
+        inputValidator: (val) => {
+          if (val === null) {
+            return true
+          }
+          return !(val.length > 10)
+        },
+        inputErrorMessage: '提醒内容为空或长度超过10'
+      }).then(({ value }) => {
+        console.log('提醒内容为:', value);
+      }).catch((e) => console.log(e))
+    },
+
     // 树形结构选择器重置表单校验状态
     onDeptInput (key) {
       this.$refs['form'].validateField(key)
@@ -347,17 +367,17 @@ export default {
       this.$refs["form"].validate((valid) => {
         if (valid) {
           console.log(this.form);
-          if(this.title === '新增'){
-            this.form.id = this.form.length+1
+          if (this.title === '新增') {
+            this.form.id = this.form.length + 1
             this.tableData.push(this.form)
-            console.log('add',this.tableData);
-          }else{
+            console.log('add', this.tableData);
+          } else {
             this.tableData.forEach(item => {
-              if(item.id === this.form.id){
+              if (item.id === this.form.id) {
                 item = this.form
               }
             })
-            console.log('update',this.tableData);
+            console.log('update', this.tableData);
           }
           // this.reset()
           this.open = false
@@ -376,8 +396,8 @@ export default {
       this.carefulOpen = false
     },
 
-    handleDelete (index,column,record) {
-      console.log('column',column);
+    handleDelete (index, column, record) {
+      console.log('column', column);
       console.log('delete', record.id);
       const tempData = [...this.tableData]
       tempData.splice(index, 1)
