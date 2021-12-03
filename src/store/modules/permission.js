@@ -150,6 +150,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "tree",
+                  path: "/options/tree",
+                  redirect: null,
+                  component: "options/tree-organization",
+                  hidden: false,
+                  meta: {
+                    title: "树形结构",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
