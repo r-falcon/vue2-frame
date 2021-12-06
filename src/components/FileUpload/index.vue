@@ -168,6 +168,14 @@ export default {
         return
       }
       window.open(file.url)
+      /**
+       * 对于文件上传之后，如果能返回预览的url，则点击文件之后可以直接预览
+       * 若上传之后，由于后台原因，点击不能预览，并且在点击文件的时候需要带参数请求接口，让他下载，同样使用window.open,格式如下：
+       */
+      // window.open(
+      //   `${process.env.BASE_API}/file/file_download.do?fileRemoteName=${query.fileRemoteName
+      //   }&paperCode=${query.paperCode}`
+      // );
     },
     // 文件上传进度条
     handleProgress () {
