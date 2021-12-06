@@ -161,6 +161,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "immer",
+                  path: "/options/immer",
+                  redirect: null,
+                  component: "options/immer-demo",
+                  hidden: false,
+                  meta: {
+                    title: "不可变数据结构库",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
