@@ -14,7 +14,7 @@
 
 <script>
 import produce from 'immer';
-import ChartPanel from '../../components/echarts/ChartPanel.vue'
+import ChartPanel from '@/views/components/echarts'
 
 export default {
   name: 'Immer',

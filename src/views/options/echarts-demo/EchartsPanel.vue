@@ -61,7 +61,8 @@
 </template>
 
 <script>
-import ChartPanel from '../../components/echarts/ChartPanel.vue'
+import ChartPanel from '@/views/components/echarts'
+
 
 // 1.折线图例
 const config1 = {
