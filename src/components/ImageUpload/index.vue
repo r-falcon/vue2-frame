@@ -60,7 +60,7 @@ export default {
     // 文件类型, 例如['png', 'jpg', 'jpeg']
     fileType: {
       type: Array,
-      default: () => ["png", "jpg", "jpeg"],
+      default: () => ["png", "jpg", "jpeg","gif"],
     },
     // 是否显示提示
     isShowTip: {
@@ -74,39 +74,40 @@ export default {
       dialogVisible: false,
       hideUpload: false,
       baseUrl: process.env.VUE_APP_BASE_API,
-      uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      // uploadImgUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      uploadImgUrl: process.env.VUE_APP_BASE_API + "private/v1/upload", // 上传的图片服务器地址
       headers: {
-        Authorization: "Bearer " + getToken(),
+        Authorization:getToken(),
       },
       fileList: []
     };
   },
-  watch: {
-    value: {
-      handler(val) {
-        if (val) {
-          // 首先将值转为数组
-          const list = Array.isArray(val) ? val : this.value.split(',');
-          // 然后将数组转为对象数组
-          this.fileList = list.map(item => {
-            if (typeof item === "string") {
-              if (item.indexOf(this.baseUrl) === -1) {
-                  item = { name: this.baseUrl + item, url: this.baseUrl + item };
-              } else {
-                  item = { name: item, url: item };
-              }
-            }
-            return item;
-          });
-        } else {
-          this.fileList = [];
-          return [];
-        }
-      },
-      deep: true,
-      immediate: true
-    }
-  },
+  // watch: {
+  //   value: {
+  //     handler(val) {
+  //       if (val) {
+  //         // 首先将值转为数组
+  //         const list = Array.isArray(val) ? val : this.value.split(',');
+  //         // 然后将数组转为对象数组
+  //         this.fileList = list.map(item => {
+  //           if (typeof item === "string") {
+  //             if (item.indexOf(this.baseUrl) === -1) {
+  //                 item = { name: this.baseUrl + item, url: this.baseUrl + item };
+  //             } else {
+  //                 item = { name: item, url: item };
+  //             }
+  //           }
+  //           return item;
+  //         });
+  //       } else {
+  //         this.fileList = [];
+  //         return [];
+  //       }
+  //     },
+  //     deep: true,
+  //     immediate: true
+  //   }
+  // },
   computed: {
     // 是否显示提示
     showTip() {
@@ -119,13 +120,16 @@ export default {
       const findex = this.fileList.map(f => f.name).indexOf(file.name);
       if(findex > -1) {
         this.fileList.splice(findex, 1);
-        this.$emit("input", this.listToString(this.fileList));
+        // this.$emit("input", this.listToString(this.fileList));
+        this.$emit("image-remove", this.fileList);
       }
     },
     // 上传成功回调
-    handleUploadSuccess(res) {
-      this.fileList.push({ name: res.fileName, url: res.fileName });
-      this.$emit("input", this.listToString(this.fileList));
+    handleUploadSuccess(res,file) {
+      // this.fileList.push({ name: res.fileName, url: res.fileName });
+      this.fileList.push({ name: file.name, url: res.data.url });
+      // this.$emit("input", this.listToString(this.fileList));
+      this.$emit("image-success", this.fileList);
       this.loading.close();
     },
     // 上传前loading加载
@@ -182,14 +186,14 @@ export default {
       this.dialogVisible = true;
     },
     // 对象转成指定字符串分隔
-    listToString(list, separator) {
-      let strs = "";
-      separator = separator || ",";
-      for (let i in list) {
-        strs += list[i].url.replace(this.baseUrl, "") + separator;
-      }
-      return strs != '' ? strs.substr(0, strs.length - 1) : '';
-    }
+    // listToString(list, separator) {
+    //   let strs = "";
+    //   separator = separator || ",";
+    //   for (let i in list) {
+    //     strs += list[i].url.replace(this.baseUrl, "") + separator;
+    //   }
+    //   return strs != '' ? strs.substr(0, strs.length - 1) : '';
+    // }
   }
 };
 </script>

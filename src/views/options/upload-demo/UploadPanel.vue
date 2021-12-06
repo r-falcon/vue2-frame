@@ -3,9 +3,16 @@
     <p>文件上传组件：</p>
     <FileUpload
       ref="fileUpload"
-      @file-success="handleUploadSuccess"
-      @file-remove="handleRemove"
+      @file-success="handleFileUploadSuccess"
+      @file-remove="handleFileRemove"
     ></FileUpload>
+
+    <p>图片上传组件：</p>
+    <ImageUpload
+      :value="photoList"
+      @image-success="handleImageUploadSuccess"
+      @image-remove="handleImageRemove"
+    ></ImageUpload>
   </div>
 </template>
 
@@ -13,14 +20,20 @@
 export default {
   data () {
     return {
-
+      photoList:[]
     }
   },
   methods: {
-    handleUploadSuccess (file) {
+    handleFileUploadSuccess (file) {
       console.log('success', file);
     },
-    handleRemove (file) {
+    handleFileRemove (file) {
+      console.log('remove', file);
+    },
+    handleImageUploadSuccess (file) {
+      console.log('success', file);
+    },
+    handleImageRemove (file) {
       console.log('remove', file);
     }
   }
