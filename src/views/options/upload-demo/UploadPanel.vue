@@ -13,6 +13,8 @@
       @image-success="handleImageUploadSuccess"
       @image-remove="handleImageRemove"
     ></ImageUpload>
+
+    <p>图片裁剪：vue-cropper组件，个人中心，用户头像修改需要</p>
   </div>
 </template>
 
