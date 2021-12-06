@@ -1,0 +1,35 @@
+.description {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  &_content {
+
+    padding: 10px;
+    display: flex;
+    align-self: flex-start;
+    &_label {
+      display: inline-block;
+      width: 160px;
+      text-align: right;
+      flex-shrink: 0;
+      font-size: 14px;
+      color: #606266;
+      font-weight: 700;
+    }
+    &_value {
+      color: #666666;
+      display: inline-block;
+      margin-left: 15px;
+      min-width: 200px;
+      // 必要时折行显示
+      // max-width: 600px;
+      // word-break: break-word;
+    }
+  }
+}
