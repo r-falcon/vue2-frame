@@ -119,7 +119,7 @@ const permission = {
               children: [
                 {
                   name: "Pagination",
-                  path: "/options/page",
+                  path: "/options/pagination",
                   redirect: null,
                   component: "options/table-pagination",
                   hidden: false,
@@ -180,6 +180,28 @@ const permission = {
                   hidden: false,
                   meta: {
                     title: "文件上传",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "page",
+                  path: "/options/page",
+                  redirect: null,
+                  component: "options/page-demo",
+                  hidden: false,
+                  meta: {
+                    title: "页面跳转",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "pagedetail",
+                  path: "/options/pagedetail",
+                  redirect: null,
+                  component: "options/page-demo/PageDetail",
+                  hidden: true,
+                  meta: {
+                    title: "页面详情",
                     icon: null,
                   },
                 },
