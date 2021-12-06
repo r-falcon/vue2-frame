@@ -172,6 +172,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "upload",
+                  path: "/options/upload",
+                  redirect: null,
+                  component: "options/upload-demo",
+                  hidden: false,
+                  meta: {
+                    title: "文件上传",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
