@@ -25,7 +25,7 @@
         colspan="2"
         class="childLevel"
       >
-        <TreeDown :json="children" @click-node="$emit('click-node', $event)" />
+        <TreeUp :json="children" @click-node="$emit('click-node', $event)" />
       </td>
     </tr>
   </table>
@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: 'TreeDown',
+  name: 'TreeUp',
   props: {
     json: {}
   },
