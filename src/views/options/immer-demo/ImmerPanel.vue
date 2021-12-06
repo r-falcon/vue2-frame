@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <!-- 需要安装immer -->
     处理结果：
     <p>{{ result1 }}</p>
     <p>{{ result2 }}</p>

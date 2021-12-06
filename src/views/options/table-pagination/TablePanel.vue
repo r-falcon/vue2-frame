@@ -258,6 +258,7 @@ export default {
         }
       },
       // 打印相关设置
+      // 需要安装'print'
       printObj: {
         id: "printMe",    // 这里是要打印元素的ID
         popTitle: '打印标题',  // 打印的标题

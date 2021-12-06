@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <!-- 不需要安装任何组件 -->
     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
       <el-tab-pane label="正序树形控件" name="first">
         <TreeUp :json="downData" @click-node="handleNodeClick"></TreeUp>

@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <!-- 需安装echarts，但是框架自带 -->
     <el-row :gutter="32">
       <!-- 折线图例 -->
       <el-col :xs="24" :sm="24" :lg="12">
