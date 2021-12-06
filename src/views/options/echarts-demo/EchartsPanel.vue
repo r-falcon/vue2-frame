@@ -43,11 +43,14 @@
         </div>
       </el-col>
 
+      <!-- 饼状图 -->
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
           <chart-panel :config="config3" />
         </div>
       </el-col>
+
+      <!-- 雷达图 -->
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
           <chart-panel :config="config4" />
