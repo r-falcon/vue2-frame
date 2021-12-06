@@ -1,16 +1,48 @@
 <template>
   <div class="app-container">
     <el-row :gutter="32">
+      <!-- 折线图例 -->
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
           <chart-panel :config="config1" />
         </div>
       </el-col>
+
+      <!-- 单折线图 -->
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <chart-panel :config="config11" />
+        </div>
+      </el-col>
+
+      <!-- 折线堆叠图 -->
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <chart-panel :config="config12" />
+        </div>
+      </el-col>
+
+      <!-- 柱状图图例 -->
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
           <chart-panel :config="config2" />
         </div>
       </el-col>
+
+      <!-- 柱状堆叠图 -->
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <chart-panel :config="config22" />
+        </div>
+      </el-col>
+
+      <!-- 折柱混合图 -->
+      <el-col :xs="24" :sm="24" :lg="12">
+        <div class="chart-wrapper">
+          <chart-panel :config="config23" />
+        </div>
+      </el-col>
+
       <el-col :xs="24" :sm="24" :lg="12">
         <div class="chart-wrapper">
           <chart-panel :config="config3" />
@@ -28,7 +60,7 @@
 <script>
 import ChartPanel from '../../components/echarts/ChartPanel.vue'
 
-// 1.单普通折线
+// 1.折线图例
 const config1 = {
   // 标题组件
   title: {
@@ -172,7 +204,83 @@ const config1 = {
   ]
 }
 
-// 2.单条柱状图
+// 2.单折线图
+const config11 = {
+  title: {
+    show: true,
+    text: '单折线图'
+  },
+  legend: {
+    data: ['数值']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  xAxis: {
+    type: 'category',
+    data: ['one', 'two', 'three', 'four']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: '数值',
+      data: [20, 30, 10, 40],
+      type: 'line',
+      smooth: false //为true，平滑折线；为false，不平滑折线；默认为true
+    }
+  ]
+}
+
+// 3.折线堆叠图
+const config12 = {
+  title: {
+    show: true,
+    text: '折线堆叠图'
+  },
+  legend: {
+    data: ['2021', '2020', '2019']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  xAxis: {
+    type: 'category',
+    data: ['one', 'two', 'three', 'four', 'five']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: '2021',
+      data: [20, 30, 10, 40, 60],
+      type: 'line',
+      // smooth:false 
+    },
+    {
+      name: '2020',
+      data: [30, 10, 50, 20, 15],
+      type: 'line',
+      // smooth:false 
+    },
+    {
+      name: '2019',
+      data: [10, 40, 60, 20, 30],
+      type: 'line',
+      // smooth:false 
+    }
+  ]
+}
+
+// 4.单条可滑动柱状图
 const config2 = {
   dataZoom: [
     // {
@@ -218,7 +326,141 @@ const config2 = {
   ]
 }
 
-// 3.普通饼状图
+// 5.可滑动柱状堆叠图
+const config22 = {
+  legend: {
+    data: ['2015', '2016', '2017']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  dataset: {
+    source: [
+      ['product', '2015', '2016', '2017'],
+      ['Matcha Latte', 43.3, 85.8, 93.7],
+      ['Milk Tea', 83.1, 73.4, 55.1],
+      ['Cheese Cocoa', 86.4, 65.2, 82.5],
+      ['Walnut Brownie', 72.4, 53.9, 39.1],
+      ['Matcha 2021', 43.3, 85.8, 93.7],
+      ['Milk 2022', 83.1, 73.4, 55.1],
+      ['Cheese 2023', 86.4, 65.2, 82.5],
+      ['Walnut 2024', 72.4, 53.9, 39.1],
+    ]
+  },
+  dataZoom: [
+    {
+      type: "slider",//slider表示有滑动块的，
+      show: true,
+      xAxisIndex: [0],//表示x轴折叠
+      start: 1,//数据窗口范围的起始百分比,表示1%
+      end: 35//数据窗口范围的结束百分比,表示35%坐标
+    },
+    // {
+    //   type: 'inside',// 内置于坐标系中
+    //   start: 0,
+    //   end: 30,
+    //   xAxisIndex: [0]
+    // },
+
+    // {
+    //   type: "inside",//           
+    //   yAxisIndex: [0],//表示y轴折叠
+    //   start: 1,
+    //   end: 35
+    // },
+  ],
+  xAxis: {
+    type: 'category', axisLabel: { show: true, interval: 'auto', inside: false, rotate: 90, margin: 8, formatter: null, showMinLabel: null, showMaxLabel: null, },
+  },
+  yAxis: {},
+  series: [
+    { type: 'bar', barwidth: 20, boundaryGap: true },
+    { type: 'bar', barwidth: 20, boundaryGap: true },
+    { type: 'bar', barwidth: 20, boundaryGap: true }]
+}
+
+// 6.折柱混合图
+const config23 = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['Evaporation', 'Precipitation', 'Temperature']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'Precipitation',
+      min: 0,
+      max: 250,
+      interval: 50,
+      axisLabel: {
+        formatter: '{value} ml'
+      }
+    },
+    {
+      type: 'value',
+      name: 'Temperature',
+      min: 0,
+      max: 25,
+      interval: 5,
+      axisLabel: {
+        formatter: '{value} °C'
+      }
+    }
+  ],
+  series: [
+    {
+      name: 'Evaporation',
+      type: 'bar',
+      data: [
+        2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+      ]
+    },
+    {
+      name: 'Precipitation',
+      type: 'bar',
+      data: [
+        2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+      ]
+    },
+    {
+      name: 'Temperature',
+      type: 'line',
+      smooth:false,
+      yAxisIndex: 1,
+      data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+    }
+  ]
+}
+
+// 7.普通饼状图
 const config3 = {
   title: {
     text: 'Referer of a Website',
@@ -255,7 +497,7 @@ const config3 = {
   ]
 }
 
-// 4.普通雷达图
+// 8.普通雷达图
 const config4 = {
   title: {
     text: 'Basic Radar Chart'
@@ -300,7 +542,11 @@ export default {
   data () {
     return {
       config1,
+      config11,
+      config12,
       config2,
+      config22,
+      config23,
       config3,
       config4
     }
