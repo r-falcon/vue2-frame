@@ -205,6 +205,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "chain",
+                  path: "/options/chain",
+                  redirect: null,
+                  component: "options/tree-table",
+                  hidden: false,
+                  meta: {
+                    title: "左树右表",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
