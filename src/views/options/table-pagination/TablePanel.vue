@@ -65,10 +65,13 @@
 
           <el-col :span="12">
             <el-form-item label="部门:" prop="dept">
+              <!-- show-count统计处当前部门的下一级部门数量 -->
+              <!-- treeselect的多选案例，看response页面 -->
               <treeselect
                 v-model="form.dept"
                 placeholder="请选择部门"
                 :options="treeData"
+                :show-count="true"
                 @input="() => onDeptInput('dept')"
                 @select="handleSelect"
               ></treeselect>
