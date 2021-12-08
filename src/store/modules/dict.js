@@ -55,6 +55,7 @@ const dict = {
         ],
       },
     ],
+    roleOptions: [],
   },
   mutations: {
     setStatusOptions(state, payload) {
@@ -62,6 +63,10 @@ const dict = {
     },
     setLevelOptions(state, payload) {
       state.levelOptions = payload;
+    },
+    setRoleOptions(state, payload) {
+      // 3.第三步获取结果
+      state.roleOptions = payload;
     },
   },
 };
