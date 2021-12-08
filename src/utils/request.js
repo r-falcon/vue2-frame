@@ -3,6 +3,7 @@ import { Notification, MessageBox, Message } from "element-ui";
 import store from "@/store";
 import { getToken } from "@/utils/auth";
 import errorCode from "@/utils/errorCode";
+import { tansParams } from "@/utils/ruoyi";
 
 axios.defaults.headers["Content-Type"] = "application/json;charset=utf-8";
 // 创建axios实例
@@ -10,7 +11,8 @@ const service = axios.create({
   // axios中请求配置有baseURL选项，表示请求URL公共部分
   baseURL: process.env.VUE_APP_BASE_API,
   // 超时
-  timeout: 10000,
+  // timeout: 10000,
+  timeout: 30000,
 });
 // request拦截器
 service.interceptors.request.use(
@@ -56,9 +58,10 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   (res) => {
+    // 可以通过res中返回的信息来条件判断某些操作
     // 未设置状态码则默认成功状态
     // const code = res.data.code || 200;
-    const code = res.data.meta.status;
+    const code = res.data.meta.status || 200;
     // 获取错误信息
     // const msg = errorCode[code] || res.data.msg || errorCode["default"];
     const msg = errorCode[code] || res.data.meta.msg || errorCode["default"];
@@ -112,5 +115,40 @@ service.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+// 通用下载方法
+export function download(url, params, filename) {
+  return service
+    .post(url, params, {
+      transformResponse: [
+        (params) => {
+          return tansParams(params);
+        },
+      ],
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      responseType: "blob",
+    })
+    .then((data) => {
+      const content = data;
+      const blob = new Blob([content]);
+      if ("download" in document.createElement("a")) {
+        const elink = document.createElement("a");
+        elink.download = filename;
+        elink.style.display = "none";
+        elink.href = URL.createObjectURL(blob);
+        document.body.appendChild(elink);
+        elink.click();
+        URL.revokeObjectURL(elink.href);
+        document.body.removeChild(elink);
+      } else {
+        navigator.msSaveBlob(blob, filename);
+      }
+    })
+    .catch((r) => {
+      console.error(r);
+    });
+}
 
 export default service;
