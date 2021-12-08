@@ -216,6 +216,28 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "dict",
+                  path: "/options/dict",
+                  redirect: null,
+                  component: "options/dict-demo",
+                  hidden: false,
+                  meta: {
+                    title: "数据字典",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "editor",
+                  path: "/options/editor",
+                  redirect: null,
+                  component: "options/editor-demo",
+                  hidden: false,
+                  meta: {
+                    title: "富文本",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],

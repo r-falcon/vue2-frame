@@ -60,9 +60,10 @@ export default {
   },
   data() {
     return {
-      uploadUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      // uploadUrl: process.env.VUE_APP_BASE_API + "/common/upload", // 上传的图片服务器地址
+      uploadUrl: process.env.VUE_APP_BASE_API + "private/v1/upload",
       headers: {
-        Authorization: "Bearer " + getToken()
+        Authorization:getToken()
       },
       Quill: null,
       currentValue: "",
@@ -169,14 +170,16 @@ export default {
       return true;
     },
     handleUploadSuccess(res, file) {
+      console.log(res);
       // 获取富文本组件实例
       let quill = this.Quill;
       // 如果上传成功
-      if (res.code == 200) {
+      if (res.meta.status == 200) {
         // 获取光标所在位置
         let length = quill.getSelection().index;
         // 插入图片  res.url为服务器返回的图片地址
-        quill.insertEmbed(length, "image", process.env.VUE_APP_BASE_API + res.fileName);
+        // quill.insertEmbed(length, "image", process.env.VUE_APP_BASE_API + res.fileName);
+        quill.insertEmbed(length, "image",res.data.url);
         // 调整光标到最后
         quill.setSelection(length + 1);
       } else {

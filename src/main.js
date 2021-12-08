@@ -25,7 +25,8 @@ import Pagination from "@/components/Pagination";
 import FileUpload from "@/components/FileUpload";
 // 图片上传组件
 import ImageUpload from "@/components/ImageUpload";
-// 文件导出下载（需要创建虚拟链接封装）
+// 富文本组件
+import Editor from "@/components/Editor";
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";
@@ -59,6 +60,7 @@ Vue.prototype.download = download;
 Vue.component("Pagination", Pagination);
 Vue.component("FileUpload", FileUpload);
 Vue.component("ImageUpload", ImageUpload);
+Vue.component("Editor", Editor);
 
 Vue.use(Print);
 Vue.use(directive);
