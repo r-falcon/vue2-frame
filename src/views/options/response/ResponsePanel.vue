@@ -16,6 +16,8 @@
       placeholder="请选择"
       style="width:50%;"
     />
+
+    <el-button @click="toPge">路由跳转</el-button>
   </div>
 </template>
 
@@ -77,6 +79,10 @@ export default {
     }
   },
   methods: {
+    toPge(){
+      this.$router.push('/launchpad')
+    },
+
     changeObj () {
       // this.obj.sex = '女' //不更新
       this.$set(this.obj, 'sex', '女')

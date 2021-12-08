@@ -5,6 +5,7 @@ Vue.use(Router);
 
 /* Layout */
 import Layout from "@/layout";
+import Launchpad from "@/views/options/launch-pad";
 
 /**
  * Note: 路由配置项
@@ -60,7 +61,14 @@ export const constantRoutes = [
     hidden: true,
   },
   {
-    path: "",
+    path: "/launchpad",
+    component: Launchpad,
+    hidden: true,
+    name: "launchpad",
+    meta: { title: "启动页", icon: "dashboard", noCache: true, affix: true },
+  },
+  {
+    path: "/",
     component: Layout,
     redirect: "index",
     children: [

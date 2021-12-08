@@ -18,7 +18,8 @@ router.beforeEach((to, from, next) => {
     /* has token*/
     if (to.path === "/login") {
       next({
-        path: "/",
+        // path: "/",
+        path: "/launchpad",
       });
       NProgress.done();
     } else {
@@ -40,7 +41,8 @@ router.beforeEach((to, from, next) => {
             store.dispatch("LogOut").then(() => {
               Message.error(err);
               next({
-                path: "/",
+                // path: "/",
+                path: "/launchpad",
               });
             });
           });
@@ -60,13 +62,13 @@ router.beforeEach((to, from, next) => {
       to.query.publicKey
     ) {
       // ?access_token=123&privateKey=456&publicKey=789
-      console.log("sort111");
       setToken(to.query.access_token);
       setPrivateKey(to.query.privateKey);
       setPublicKey(to.query.publicKey);
       store.commit("SET_TOKEN", to.query.access_token);
       next({
-        path: "/",
+        // path: "/",
+        path: "/launchpad",
       });
     } else if (to.query && to.query.ticket) {
       // ?ticket=abc
@@ -93,7 +95,8 @@ router.beforeEach((to, from, next) => {
             store.dispatch("LogOut").then(() => {
               Message.error(err);
               next({
-                path: "/",
+                // path: "/",
+                path: "/launchpad",
               });
             });
           });

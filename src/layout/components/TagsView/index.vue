@@ -124,7 +124,8 @@ export default {
       const affixTags = this.affixTags = this.filterAffixTags(this.routes)
       for (const tag of affixTags) {
         // Must have tag name
-        if (tag.name) {
+        // if (tag.name) {
+        if (tag.name && tag.name !== '/launchpad') {
           this.$store.dispatch('tagsView/addVisitedView', tag)
         }
       }
