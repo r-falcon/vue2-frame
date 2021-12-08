@@ -238,6 +238,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "axios",
+                  path: "/options/axios",
+                  redirect: null,
+                  component: "options/axios-demo",
+                  hidden: false,
+                  meta: {
+                    title: "接口请求",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
