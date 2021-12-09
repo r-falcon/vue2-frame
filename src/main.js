@@ -17,7 +17,12 @@ import Print from "vue-print-nb";
 import "./assets/icons"; // icon
 import "./permission"; // permission control
 
-import { parseTime, resetForm, downloadLook } from "@/utils/ruoyi";
+import {
+  parseTime,
+  resetForm,
+  downloadLook,
+  deleteChildren,
+} from "@/utils/ruoyi";
 import { download } from "@/utils/request";
 // 分页组件
 import Pagination from "@/components/Pagination";
@@ -52,6 +57,8 @@ Vue.prototype.resetForm = resetForm;
 Vue.prototype.downloadLook = downloadLook;
 // 通用下载方法（需要创建虚拟链接）
 Vue.prototype.download = download;
+// 递归删除树形结构中children为空的节点
+Vue.prototype.deleteChildren = deleteChildren;
 
 // 全局组件挂载
 // Vue.component("DictTag", DictTag);

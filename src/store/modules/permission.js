@@ -260,6 +260,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "mixin",
+                  path: "/options/mixin",
+                  redirect: null,
+                  component: "options/mixin-demo",
+                  hidden: false,
+                  meta: {
+                    title: "mixin混入",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
