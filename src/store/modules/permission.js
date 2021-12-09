@@ -157,7 +157,7 @@ const permission = {
                   component: "options/tree-organization",
                   hidden: false,
                   meta: {
-                    title: "树形结构",
+                    title: "树形组织架构",
                     icon: null,
                   },
                 },
@@ -246,6 +246,17 @@ const permission = {
                   hidden: false,
                   meta: {
                     title: "接口请求",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "select",
+                  path: "/options/select",
+                  redirect: null,
+                  component: "options/tree-select",
+                  hidden: false,
+                  meta: {
+                    title: "树形结构",
                     icon: null,
                   },
                 },

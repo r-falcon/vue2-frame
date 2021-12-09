@@ -91,11 +91,13 @@ export function tansParams(params) {
 export function deleteChildren(arr) {
   const childs = arr;
   for (let i = childs.length; i--; i > 0) {
-    if (childs[i].children) {
-      if (childs[i].children && !childs[i].children.length) {
+    if (childs[i].children === null) {
+      delete childs[i].children;
+    } else if (childs[i].children) {
+      if (!childs[i].children.length) {
         delete childs[i].children;
       } else {
-        this.deleteChildren(childs[i].children);
+        deleteChildren(childs[i].children);
       }
     }
   }
