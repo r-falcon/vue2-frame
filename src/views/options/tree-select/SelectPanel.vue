@@ -11,7 +11,19 @@
     />
 
     <!-- 设置某些节点禁止选择，disabled，只在有checkbox选框的时候有作用 -->
+    <p>可以多选</p>
     <el-tree :data="epTree" node-key="id" show-checkbox :props="defaultProps" />
+
+    <!-- el-tree设置只能选择子节点 -->
+    <p style="margin-top: 100px">只能选叶子节点</p>
+    <el-tree
+      class="demoTree"
+      :data="epTree"
+      node-key="id"
+      show-checkbox
+      :check-strictly="true"
+      :props="defaultProps"
+    />
   </div>
 </template>
 
@@ -89,9 +101,9 @@ export default {
           children: node.children,
         }
       },
-      defaultProps:{
-        label:'label',
-        children:'children'
+      defaultProps: {
+        label: 'label',
+        children: 'children'
       }
     }
   },
@@ -102,3 +114,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+// 使用 /deep/ 深度选择不生效，使用::v-deep 代替深度选择器生效
+// 隐藏父级的复选框，只留叶子节点
+.demoTree ::v-deep .el-tree-node {
+  .is-leaf + .el-checkbox .el-checkbox__inner {
+    display: inline-block;
+  }
+  .el-checkbox .el-checkbox__inner {
+    display: none;
+  }
+}
+</style>
