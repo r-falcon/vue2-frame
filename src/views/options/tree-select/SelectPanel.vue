@@ -15,6 +15,7 @@
     <el-tree :data="epTree" node-key="id" show-checkbox :props="defaultProps" />
 
     <!-- el-tree设置只能选择子节点 -->
+    <!-- 设置样式隐藏；加上check-strictly -->
     <p style="margin-top: 100px">只能选叶子节点</p>
     <el-tree
       class="demoTree"

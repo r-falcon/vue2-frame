@@ -271,6 +271,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "qs",
+                  path: "/options/qs",
+                  redirect: null,
+                  component: "options/qs-demo",
+                  hidden: false,
+                  meta: {
+                    title: "qs妙用",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
