@@ -59,53 +59,6 @@ const permission = {
           code: 200,
           msg: "获取动态路由成功",
           data: [
-            // 系统维护
-            {
-              name: "System",
-              path: "/system",
-              redirect: null,
-              component: "Layout",
-              meta: {
-                title: "系统维护",
-                icon: null,
-              },
-              children: [
-                {
-                  name: "User",
-                  path: "/system/user",
-                  redirect: null,
-                  component: "system/user/index",
-                  hidden: false,
-                  meta: {
-                    title: "用户管理",
-                    icon: null,
-                  },
-                },
-                {
-                  name: "Role",
-                  path: "/system/role",
-                  redirect: null,
-                  component: "system/role/index",
-                  hidden: false,
-                  meta: {
-                    title: "角色管理",
-                    icon: null,
-                  },
-                },
-                {
-                  name: "Menu",
-                  path: "/system/menu",
-                  redirect: null,
-                  component: "system/menu/index",
-                  hidden: false,
-                  meta: {
-                    title: "菜单管理",
-                    icon: null,
-                  },
-                },
-              ],
-            },
-
             // 用户操作
             {
               name: "Options",
@@ -113,10 +66,21 @@ const permission = {
               redirect: null,
               component: "Layout",
               meta: {
-                title: "用户操作",
+                title: "项目样例",
                 icon: null,
               },
               children: [
+                {
+                  name: "InputNumber",
+                  path: "/options/input-number",
+                  redirect: null,
+                  component: "options/input-number",
+                  hidden: false,
+                  meta: {
+                    title: "数字输入框",
+                    icon: null,
+                  },
+                },
                 {
                   name: "Pagination",
                   path: "/options/pagination",
@@ -125,6 +89,51 @@ const permission = {
                   hidden: false,
                   meta: {
                     title: "分页表格",
+                    icon: null,
+                  },
+                },
+
+                {
+                  name: "RowMove",
+                  path: "/options/row-move",
+                  redirect: null,
+                  component: "options/row-move",
+                  hidden: false,
+                  meta: {
+                    title: "行移动表格",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "DragTable",
+                  path: "/options/drag-table",
+                  redirect: null,
+                  component: "options/drag-table",
+                  hidden: false,
+                  meta: {
+                    title: "表格行列拖拽",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "DynamicTable",
+                  path: "/options/dynamic-table",
+                  redirect: null,
+                  component: "options/dynamic-table",
+                  hidden: false,
+                  meta: {
+                    title: "动态表格",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "DynamicForm",
+                  path: "/options/dynamic-form",
+                  redirect: null,
+                  component: "options/dynamic-form",
+                  hidden: false,
+                  meta: {
+                    title: "动态表单",
                     icon: null,
                   },
                 },
@@ -140,7 +149,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "echarts",
+                  name: "Echarts",
                   path: "/options/echarts",
                   redirect: null,
                   component: "options/echarts-demo",
@@ -151,7 +160,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "tree",
+                  name: "Tree",
                   path: "/options/tree",
                   redirect: null,
                   component: "options/tree-organization",
@@ -162,7 +171,29 @@ const permission = {
                   },
                 },
                 {
-                  name: "immer",
+                  name: "Select",
+                  path: "/options/select",
+                  redirect: null,
+                  component: "options/tree-select",
+                  hidden: false,
+                  meta: {
+                    title: "树形菜单选择",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "Render",
+                  path: "/options/render",
+                  redirect: null,
+                  component: "options/tree-render",
+                  hidden: false,
+                  meta: {
+                    title: "树形列表操作",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "Immer",
                   path: "/options/immer",
                   redirect: null,
                   component: "options/immer-demo",
@@ -173,7 +204,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "upload",
+                  name: "Upload",
                   path: "/options/upload",
                   redirect: null,
                   component: "options/upload-demo",
@@ -184,7 +215,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "page",
+                  name: "Page",
                   path: "/options/page",
                   redirect: null,
                   component: "options/page-demo",
@@ -195,7 +226,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "pagedetail",
+                  name: "PageDetail",
                   path: "/options/pagedetail",
                   redirect: null,
                   component: "options/page-demo/PageDetail",
@@ -206,7 +237,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "chain",
+                  name: "Chain",
                   path: "/options/chain",
                   redirect: null,
                   component: "options/tree-table",
@@ -217,7 +248,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "dict",
+                  name: "Dict",
                   path: "/options/dict",
                   redirect: null,
                   component: "options/dict-demo",
@@ -228,7 +259,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "editor",
+                  name: "Editor",
                   path: "/options/editor",
                   redirect: null,
                   component: "options/editor-demo",
@@ -239,7 +270,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "axios",
+                  name: "Axios",
                   path: "/options/axios",
                   redirect: null,
                   component: "options/axios-demo",
@@ -250,18 +281,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "select",
-                  path: "/options/select",
-                  redirect: null,
-                  component: "options/tree-select",
-                  hidden: false,
-                  meta: {
-                    title: "树形结构",
-                    icon: null,
-                  },
-                },
-                {
-                  name: "mixin",
+                  name: "Mixin",
                   path: "/options/mixin",
                   redirect: null,
                   component: "options/mixin-demo",
@@ -272,7 +292,7 @@ const permission = {
                   },
                 },
                 {
-                  name: "qs",
+                  name: "Qs",
                   path: "/options/qs",
                   redirect: null,
                   component: "options/qs-demo",
