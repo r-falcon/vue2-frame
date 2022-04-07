@@ -116,6 +116,17 @@ const permission = {
                   },
                 },
                 {
+                  name: "TableCrud",
+                  path: "/options/table-crud",
+                  redirect: null,
+                  component: "options/table-crud",
+                  hidden: false,
+                  meta: {
+                    title: "表格假crud",
+                    icon: null,
+                  },
+                },
+                {
                   name: "DynamicTable",
                   path: "/options/dynamic-table",
                   redirect: null,
@@ -134,6 +145,17 @@ const permission = {
                   hidden: false,
                   meta: {
                     title: "动态表单",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "DynamicComponent",
+                  path: "/options/dynamic-component",
+                  redirect: null,
+                  component: "options/dynamic-component",
+                  hidden: false,
+                  meta: {
+                    title: "动态组件",
                     icon: null,
                   },
                 },
