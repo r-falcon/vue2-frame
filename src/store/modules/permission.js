@@ -1,6 +1,7 @@
 import { constantRoutes } from "@/router";
 // import { getRouters } from "@/api/menu";
 import Layout from "@/layout/index";
+import store from "@/store";
 // import ParentView from "@/components/ParentView";
 // import InnerLink from "@/layout/components/InnerLink";
 
@@ -59,6 +60,32 @@ const permission = {
           code: 200,
           msg: "获取动态路由成功",
           data: [
+            // 系统管理
+            {
+              name: "System",
+              path: "/system",
+              redirect: null,
+              component: "Layout",
+              meta: {
+                title: "系统管理",
+                icon: null,
+                roles: ["user"],
+              },
+              children: [
+                {
+                  name: "User",
+                  path: "/system/user",
+                  redirect: null,
+                  component: "system/user/index",
+                  hidden: false,
+                  meta: {
+                    title: "用户管理",
+                    icon: null,
+                  },
+                },
+              ],
+            },
+
             // 用户操作
             {
               name: "Options",
@@ -68,6 +95,7 @@ const permission = {
               meta: {
                 title: "项目样例",
                 icon: null,
+                roles: ["admin"],
               },
               children: [
                 {
@@ -328,13 +356,21 @@ const permission = {
             },
           ],
         };
+        // ---鉴定权限开始
+        let key = store.getters.roles[0];
+        let list = [];
+        res.data.map((item) =>
+          item.meta.roles.includes(key) ? list.push(item) : null
+        );
+        res.data = list;
+        // ---鉴定权限结束
         const accessedRoutes = filterAsyncRouter(res.data);
         accessedRoutes.push({
           path: "*",
           redirect: "/404",
           hidden: true,
+          meta: { roles: ["admin", "user"] },
         });
-        console.log("动态路由", accessedRoutes);
         commit("SET_ROUTES", accessedRoutes);
         resolve(accessedRoutes);
       });

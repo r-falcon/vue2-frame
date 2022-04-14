@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-input-number
       readonly
-      min="0"
+      :min="0"
       v-model="value"
       :precision="2"
     ></el-input-number>
