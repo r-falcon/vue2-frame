@@ -352,8 +352,45 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Websocket",
+                  path: "/options/websocket",
+                  redirect: null,
+                  component: "options/websocket-demo",
+                  hidden: false,
+                  meta: {
+                    title: "使用websocket",
+                    icon: null,
+                  },
+                },
               ],
             },
+
+            // vue基础
+            {
+              name: "Basic",
+              path: "/basic",
+              redirect: null,
+              component: "Layout",
+              meta: {
+                title: "vue基础",
+                icon: null,
+                roles: ["admin"],
+              },
+              children: [
+                {
+                  name: "SyncDemo",
+                  path: "/basic/syncPanel",
+                  redirect: null,
+                  component: "basic/sync",
+                  hidden: false,
+                  meta: {
+                    title: "sync原理",
+                    icon: null,
+                  },
+                },
+              ]
+            }
           ],
         };
         // ---鉴定权限开始
