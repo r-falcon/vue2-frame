@@ -363,6 +363,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "QrCode",
+                  path: "/options/qrcode",
+                  redirect: null,
+                  component: "options/qrcode-demo",
+                  hidden: false,
+                  meta: {
+                    title: "二维码",
+                    icon: null,
+                  },
+                }
               ],
             },
 
