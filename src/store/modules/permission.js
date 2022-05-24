@@ -260,7 +260,7 @@ const permission = {
                   component: "options/upload-demo",
                   hidden: false,
                   meta: {
-                    title: "文件上传",
+                    title: "文件相关操作",
                     icon: null,
                   },
                 },

@@ -8,6 +8,7 @@
    -->
    websocket 测试用例
    返回数据：{{user}}
+   <el-button @click="handleClose">关闭websocket连接</el-button>
   </div>
 </template>
 
@@ -37,6 +38,10 @@ export default {
 
     beginWebScoket(initScoket){
       initScoket()
+    },
+
+    handleClose(){
+      closeWebsocket()
     }
   }
 }
