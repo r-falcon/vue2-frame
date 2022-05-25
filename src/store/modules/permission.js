@@ -373,7 +373,40 @@ const permission = {
                     title: "二维码",
                     icon: null,
                   },
-                }
+                },
+                {
+                  name: "Map",
+                  path: "/options/map",
+                  redirect: null,
+                  component: "options/map-demo",
+                  hidden: false,
+                  meta: {
+                    title: "地图下钻（中国）",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "province",
+                  path: "/options/province",
+                  redirect: null,
+                  component: "options/map-demo/province",
+                  hidden: true,
+                  meta: {
+                    title: "省份",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "city",
+                  path: "/options/city",
+                  redirect: null,
+                  component: "options/map-demo/city",
+                  hidden: true,
+                  meta: {
+                    title: "城市",
+                    icon: null,
+                  },
+                },
               ],
             },
 
@@ -400,8 +433,8 @@ const permission = {
                     icon: null,
                   },
                 },
-              ]
-            }
+              ],
+            },
           ],
         };
         // ---鉴定权限开始
