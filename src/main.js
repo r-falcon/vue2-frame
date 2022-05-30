@@ -33,8 +33,10 @@ import FileUpload from "@/components/FileUpload";
 import ImageUpload from "@/components/ImageUpload";
 // 富文本组件
 import Editor from "@/components/Editor";
-// 水印 
-import './utils/waterMarker'
+// 水印
+import "./utils/waterMarker";
+// 引入amap
+import VueAMap from "vue-amap";
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";
@@ -77,6 +79,21 @@ Vue.use(directive);
 Vue.use(plugins);
 // Vue.use(VueMeta);
 // DictData.install();
+Vue.use(VueAMap);
+VueAMap.initAMapApiLoader({
+  key: "06de186c9792fd737ab1f98aa05b8848",
+  plugin: [
+    "AMap.Scale", // 地图比例尺插件
+    "AMap.OverView", // 地图鹰眼插件，默认在地图右下角显示缩略图
+    "AMap.ToolBar", // 地图工具条插件，可以用来控制地图的缩放和平移
+    "AMap.MapType", // 地图类型切换插件，用来切换固定的几个常用图层
+    "AMap.PlaceSearch", // 输入提示插件
+    "AMap.Geolocation", // 定位插件，整合了浏览器定位、精确IP定位、sdk辅助定位多种手段
+    "AMap.Geocoder", // 地址编码服务(地理编码和逆地理编码)
+  ],
+  v: "1.4.4", //  高德SDK的版本
+  uiVersion: "1.0", //  UI库的版本
+});
 
 /**
  * If you don't want to use mock-server

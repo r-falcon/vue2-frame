@@ -407,6 +407,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "amap",
+                  path: "/options/amap",
+                  redirect: null,
+                  component: "options/amap-demo",
+                  hidden: false,
+                  meta: {
+                    title: "高德地图",
+                    icon: null,
+                  },
+                },
               ],
             },
 
