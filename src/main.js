@@ -35,8 +35,10 @@ import ImageUpload from "@/components/ImageUpload";
 import Editor from "@/components/Editor";
 // 水印
 import "./utils/waterMarker";
-// 引入amap
+// 引入高德amap
 import VueAMap from "vue-amap";
+// 引入百度map
+import BaiduMap from "vue-baidu-map";
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";
@@ -93,6 +95,10 @@ VueAMap.initAMapApiLoader({
   ],
   v: "1.4.4", //  高德SDK的版本
   uiVersion: "1.0", //  UI库的版本
+});
+
+Vue.use(BaiduMap, {
+  ak: "o0LVi345SG0pu2IyhkEGTGw3dusTyFG7",
 });
 
 /**

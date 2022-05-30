@@ -414,7 +414,7 @@ const permission = {
                   component: "options/amap-demo",
                   hidden: false,
                   meta: {
-                    title: "高德地图",
+                    title: "地图操作",
                     icon: null,
                   },
                 },
