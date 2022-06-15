@@ -39,6 +39,8 @@ import "./utils/waterMarker";
 import VueAMap from "vue-amap";
 // 引入百度map
 import BaiduMap from "vue-baidu-map";
+// 引入animate
+import animated from "animate.css";
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";
@@ -82,6 +84,7 @@ Vue.use(plugins);
 // Vue.use(VueMeta);
 // DictData.install();
 Vue.use(VueAMap);
+Vue.use(animated);
 VueAMap.initAMapApiLoader({
   key: "06de186c9792fd737ab1f98aa05b8848",
   plugin: [
@@ -115,6 +118,18 @@ Vue.use(Element, {
 });
 
 Vue.config.productionTip = false;
+
+// 全局注册指令
+Vue.directive("focus", {
+  inserted(el) {
+    el.focus();
+  },
+});
+
+// 全局过滤器
+Vue.filter("global_filter", function (value) {
+  return "￥" + value;
+});
 
 new Vue({
   el: "#app",
