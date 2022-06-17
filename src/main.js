@@ -41,6 +41,9 @@ import VueAMap from "vue-amap";
 import BaiduMap from "vue-baidu-map";
 // 引入animate
 import animated from "animate.css";
+// 引入vue-org-tree
+import Vue2OrgTree from "vue2-org-tree";
+import "vue2-org-tree/dist/style.css";
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";
@@ -116,6 +119,8 @@ Vue.use(BaiduMap, {
 Vue.use(Element, {
   size: Cookies.get("size") || "medium", // set element-ui default size
 });
+
+Vue.use(Vue2OrgTree);
 
 Vue.config.productionTip = false;
 
