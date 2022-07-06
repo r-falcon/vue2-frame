@@ -36,3 +36,5 @@ npm run build:prod
 ## clone
 
 clone 项目修改后，并将项目移动到另一个目录，重新 install 出现 bug，删掉 node_modules，重新 install 得以解决
+
+## 有时间写表格求和

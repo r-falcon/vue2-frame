@@ -34,7 +34,7 @@ import ImageUpload from "@/components/ImageUpload";
 // 富文本组件
 import Editor from "@/components/Editor";
 // 水印
-import "./utils/waterMarker";
+// import "./utils/waterMarker";
 // 引入高德amap
 import VueAMap from "vue-amap";
 // 引入百度map
@@ -44,6 +44,16 @@ import animated from "animate.css";
 // 引入vue-org-tree
 import Vue2OrgTree from "vue2-org-tree";
 import "vue2-org-tree/dist/style.css";
+// 图片懒加载
+import VueLazyLoad from "vue-lazyload";
+
+// 有个坑，static中的文件可以直接引用；assets中的需要使用require引入
+Vue.use(VueLazyLoad, {
+  preLoad: 1.3,
+  error: require("@/assets/404_images/404.png"),
+  loading: require("@/assets/404_images/404_cloud.png"),
+  attempt: 1,
+});
 
 // import { getDicts } from "@/api/system/dict/data";
 // import { getConfigKey } from "@/api/system/config";

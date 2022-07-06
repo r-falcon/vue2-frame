@@ -50,6 +50,15 @@ module.exports = {
         "@": resolve("src"),
       },
     },
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: "javascript/auto",
+        },
+      ],
+    },
   },
   chainWebpack(config) {
     config.plugins.delete("preload"); // TODO: need test

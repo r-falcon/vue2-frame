@@ -418,6 +418,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "directive",
+                  path: "/options/directive",
+                  redirect: null,
+                  component: "options/directive-demo",
+                  hidden: false,
+                  meta: {
+                    title: "常用自定义指令",
+                    icon: null,
+                  },
+                },
               ],
             },
 
