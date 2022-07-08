@@ -429,6 +429,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "virtual",
+                  path: "/options/virtual",
+                  redirect: null,
+                  component: "options/virtual-list-demo",
+                  hidden: false,
+                  meta: {
+                    title: "长列表/虚拟列表",
+                    icon: null,
+                  },
+                },
               ],
             },
 
