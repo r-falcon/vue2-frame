@@ -598,6 +598,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Watch",
+                  path: "/basic/watch",
+                  redirect: null,
+                  component: "basic/watch",
+                  hidden: false,
+                  meta: {
+                    title: "watch侦听",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
