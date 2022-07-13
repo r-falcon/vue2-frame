@@ -609,6 +609,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Model",
+                  path: "/basic/model",
+                  redirect: null,
+                  component: "basic/model",
+                  hidden: false,
+                  meta: {
+                    title: "v-model封装",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
