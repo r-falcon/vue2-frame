@@ -599,8 +599,8 @@ const permission = {
                   },
                 },
                 {
-                  name: "Watch",
-                  path: "/basic/watch",
+                  name: "WatchDemo",
+                  path: "/basic/watchPanel",
                   redirect: null,
                   component: "basic/watch",
                   hidden: false,
@@ -610,13 +610,24 @@ const permission = {
                   },
                 },
                 {
-                  name: "Model",
-                  path: "/basic/model",
+                  name: "ModelDemo",
+                  path: "/basic/modelPanel",
                   redirect: null,
                   component: "basic/model",
                   hidden: false,
                   meta: {
                     title: "v-model封装",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "TimeoutDemo",
+                  path: "/basic/timeoutPanel",
+                  redirect: null,
+                  component: "basic/timeout",
+                  hidden: false,
+                  meta: {
+                    title: "生命周期定时器的使用",
                     icon: null,
                   },
                 },
