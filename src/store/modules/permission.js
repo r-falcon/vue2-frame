@@ -440,6 +440,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "ScreenRecord",
+                  path: "/options/record",
+                  redirect: null,
+                  component: "options/screen-record",
+                  hidden: false,
+                  meta: {
+                    title: "屏幕录制",
+                    icon: null,
+                  },
+                },
               ],
             },
 

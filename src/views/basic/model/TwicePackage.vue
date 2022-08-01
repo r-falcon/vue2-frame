@@ -13,7 +13,7 @@ export default {
     Package,
   },
   model: {
-    props: "lovingVue",
+    prop: "lovingVue",
     event: "change",
   },
   props: ["lovingVue"],
