@@ -9,6 +9,7 @@ import debounce from "./debounce";
 import throttle from "./throttle";
 import imglazy from "./imglazy";
 import watermarker from "./watermarker";
+import loadMore from "./loadMore";
 
 const install = function (Vue) {
   Vue.directive("hasRole", hasRole);
@@ -22,6 +23,7 @@ const install = function (Vue) {
   Vue.directive("throttle", throttle);
   Vue.directive("imglazy", imglazy);
   Vue.directive("watermark", watermarker);
+  Vue.directive("loadMore", loadMore);
 };
 
 if (window.Vue) {

@@ -232,6 +232,17 @@ const permission = {
                   },
                 },
                 {
+                  name: "LazyloadSelect",
+                  path: "/options/lazyloadselect",
+                  redirect: null,
+                  component: "options/lazyload-select",
+                  hidden: false,
+                  meta: {
+                    title: "el-select懒加载",
+                    icon: null,
+                  },
+                },
+                {
                   name: "Render",
                   path: "/options/render",
                   redirect: null,
