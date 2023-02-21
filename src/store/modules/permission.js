@@ -69,7 +69,7 @@ const permission = {
               meta: {
                 title: "系统管理",
                 icon: null,
-                roles: ["user"],
+                roles: ["admin"],
               },
               children: [
                 {
@@ -80,6 +80,39 @@ const permission = {
                   hidden: false,
                   meta: {
                     title: "用户管理",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "Role",
+                  path: "/system/role",
+                  redirect: null,
+                  component: "system/role/index",
+                  hidden: false,
+                  meta: {
+                    title: "角色管理",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "Menu",
+                  path: "/system/menu",
+                  redirect: null,
+                  component: "system/menu/index",
+                  hidden: false,
+                  meta: {
+                    title: "菜单管理",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "Dept",
+                  path: "/system/dept",
+                  redirect: null,
+                  component: "system/dept/index",
+                  hidden: false,
+                  meta: {
+                    title: "部门管理",
                     icon: null,
                   },
                 },
