@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { Chart, CaptionChart } from "../../components/self/Chart";
+import { Chart, CaptionChart } from "@/components/self/Chart";
 
 export default {
   name: "useChart",

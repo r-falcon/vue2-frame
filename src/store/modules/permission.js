@@ -723,6 +723,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "GradientPic",
+                  path: "/component/gradientPic",
+                  redirect: null,
+                  component: "useComponent/gradientPic",
+                  hidden: false,
+                  meta: {
+                    title: "GradientPic",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
