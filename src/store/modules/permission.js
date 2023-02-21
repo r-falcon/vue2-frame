@@ -688,6 +688,32 @@ const permission = {
                 },
               ],
             },
+
+            // 组件封装
+            {
+              name: "Component",
+              path: "/component",
+              redirect: null,
+              component: "Layout",
+              meta: {
+                title: "组件封装",
+                icon: null,
+                roles: ["admin"],
+              },
+              children: [
+                {
+                  name: "Chart",
+                  path: "",
+                  redirect: null,
+                  component: "useComponent/chart",
+                  hidden: false,
+                  meta: {
+                    title: "Chart",
+                    icon: null,
+                  },
+                },
+              ],
+            },
           ],
         };
         // ---鉴定权限开始
