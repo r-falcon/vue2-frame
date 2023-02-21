@@ -734,6 +734,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Indicator",
+                  path: "/component/indicator",
+                  redirect: null,
+                  component: "useComponent/indicator",
+                  hidden: false,
+                  meta: {
+                    title: "Indicator",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
