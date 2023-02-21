@@ -703,12 +703,23 @@ const permission = {
               children: [
                 {
                   name: "Chart",
-                  path: "",
+                  path: "/component/chart",
                   redirect: null,
                   component: "useComponent/chart",
                   hidden: false,
                   meta: {
                     title: "Chart",
+                    icon: null,
+                  },
+                },
+                {
+                  name: "CardPanel",
+                  path: "/component/cardPanel",
+                  redirect: null,
+                  component: "useComponent/cardPanel",
+                  hidden: false,
+                  meta: {
+                    title: "CardPanel",
                     icon: null,
                   },
                 },

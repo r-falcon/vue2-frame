@@ -12,8 +12,7 @@
 </template>
 
 <script>
-import Chart from "@/components/self/Chart/Chart.vue";
-import CaptionChart from "@/components/self/Chart/CaptionChart.vue";
+import { Chart, CaptionChart } from "../../components/self/Chart";
 
 export default {
   name: "useChart",
@@ -21,8 +20,10 @@ export default {
     Chart,
     CaptionChart,
   },
-  data: {
-    config: {},
+  data() {
+    return {
+      config: {},
+    };
   },
   created() {
     this.config = {
