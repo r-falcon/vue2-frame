@@ -756,6 +756,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Search",
+                  path: "/component/search",
+                  redirect: null,
+                  component: "useComponent/search",
+                  hidden: false,
+                  meta: {
+                    title: "Search",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
