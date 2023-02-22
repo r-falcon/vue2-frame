@@ -767,6 +767,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "Table",
+                  path: "/component/table",
+                  redirect: null,
+                  component: "useComponent/table",
+                  hidden: false,
+                  meta: {
+                    title: "Table",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
