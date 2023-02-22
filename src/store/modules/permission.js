@@ -745,6 +745,17 @@ const permission = {
                     icon: null,
                   },
                 },
+                {
+                  name: "FormItem",
+                  path: "/component/formItem",
+                  redirect: null,
+                  component: "useComponent/formItem",
+                  hidden: false,
+                  meta: {
+                    title: "FormItem",
+                    icon: null,
+                  },
+                },
               ],
             },
           ],
